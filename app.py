@@ -8,6 +8,7 @@ import dash
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 user_data_df = pd.read_csv("User_data.csv")
 user_data_df['Date'] = pd.to_datetime(user_data_df['Date'])
 user_data_df = user_data_df.sort_values(by='Date')
